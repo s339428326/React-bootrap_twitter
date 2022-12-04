@@ -378,11 +378,12 @@ $gradient: linear-gradient(
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * 0.25,
-  2: $spacer * 0.5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  4: $spacer * 0.25,
+  8: $spacer * 0.5,
+  20: $spacer * 1.25,
+  16: $spacer,
+  24: $spacer * 1.5,
+  48: $spacer * 3,
 ) !default;
 // scss-docs-end spacer-variables-maps
 

@@ -1,7 +1,11 @@
-import { useState } from "react";
+//Component
 import AuthInput from "../../component/AuthInput/AuthInput";
 import Logo from "../../component/Logo/Logo";
 import MainButton from "../../component/MainButton/MainButton";
+import MainLink from "../../component/MainLink/MainLink";
+//React
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [login, setLogin] = useState({
@@ -35,7 +39,17 @@ const LoginPage = () => {
             value={login.password}
             onChange={handlePassword}
           />
-          <MainButton>登入</MainButton>
+          <div className="mb-20">
+            <MainButton>登入</MainButton>
+          </div>
+          <div className="d-flex gap-8 justify-content-end">
+            <Link to="/regist">
+              <MainLink>註冊 Alphitter</MainLink>
+            </Link>
+            <Link to="/adminLogin">
+              <MainLink>後台登入</MainLink>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
