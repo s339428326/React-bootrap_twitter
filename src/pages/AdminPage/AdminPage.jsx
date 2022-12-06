@@ -11,15 +11,15 @@ import Col from "react-bootstrap/Col";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
-  const [login, setLogin] = useState({
-    userId: "",
-    password: "",
+const AdminPage = () => {
+  const [adminLogin, setAdminLogin] = useState({
+    adminId: "",
+    adminPassword: "",
   });
 
   const handleInput = (keyName) => (currentValue) => {
-    setLogin({
-      ...login,
+    setAdminLogin({
+      ...adminLogin,
       [keyName]: currentValue,
     });
   };
@@ -28,23 +28,23 @@ const LoginPage = () => {
     <Container>
       <Row className="justify-content-center">
         <Col xl={6} md={8}>
-          <Logo title={"登入 Alphitter"} />
-          <AuthInput value={login.userId} onChange={handleInput("userId")} />
+          <Logo title={"後台登入"} />
+          <AuthInput
+            value={adminLogin.adminId}
+            onChange={handleInput("adminId")}
+          />
           <AuthInput
             label="密碼"
             type="password"
-            value={login.password}
-            onChange={handleInput("password")}
+            value={adminLogin.adminPassword}
+            onChange={handleInput("adminPassword")}
           />
           <div className="mb-20">
             <MainButton>登入</MainButton>
           </div>
-          <div className="d-flex gap-8 justify-content-end">
-            <Link to="/register">
-              <MainLink>註冊 Alphitter</MainLink>
-            </Link>
-            <Link to="/admin">
-              <MainLink>後台登入</MainLink>
+          <div className="d-flex justify-content-end">
+            <Link to="/login">
+              <MainLink>前台登入</MainLink>
             </Link>
           </div>
         </Col>
@@ -53,4 +53,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default AdminPage;

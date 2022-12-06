@@ -2,9 +2,15 @@ import MainButton from "../component/MainButton/MainButton";
 import AuthInput from "../component/AuthInput/AuthInput";
 import MainLink from "../component/MainLink/MainLink";
 import Logo from "../component/Logo/Logo";
-
+import NavBar from "../component/NavBar/NavBar";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  HomeIcon,
+  LogoIcon,
+  LogoOutIcon,
+  SettingIcon,
+} from "../component/Icons/Icons";
 
 const ComponentStyle = () => {
   /*Example handle AuthInput */
@@ -21,7 +27,7 @@ const ComponentStyle = () => {
 
   return (
     <div className="container">
-      <h1 className="mt-4">零件列表</h1>
+      <h1 className="mt-4">元件列表</h1>
       <div className="border mb-4 p-4">
         <h5>Logo</h5>
         <Logo title={"建立你的帳號"} />
@@ -48,6 +54,18 @@ const ComponentStyle = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="border mb-4 p-4">
+        <h5>Icons</h5>
+        <div className="d-flex gap-8">
+          <LogoIcon width={40} height={40} />
+          <HomeIcon width={40} height={40} />
+          <SettingIcon width={40} height={40} />
+          <LogoOutIcon width={40} height={40} />
+        </div>
+      </div>
+      <div className="border mb-4 p-4">
+        <NavBar />
       </div>
     </div>
   );

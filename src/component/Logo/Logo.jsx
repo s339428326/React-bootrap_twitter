@@ -1,10 +1,10 @@
-import logoIcon from "../../assets/icons/ac.svg";
+import { LogoIcon } from "../Icons/Icons";
 import styles from "./Logo.module.scss";
 
 const Logo = ({ title }) => {
   return (
     <div className={`${styles["logo"]}`}>
-      <img src={logoIcon} alt="logo" />
+      <LogoIcon width={40} height={40} />
       <h1>{title ? title : "未輸入"}</h1>
     </div>
   );
