@@ -1,16 +1,24 @@
+//Component
 import MainButton from "../component/MainButton/MainButton";
 import AuthInput from "../component/AuthInput/AuthInput";
 import MainLink from "../component/MainLink/MainLink";
 import Logo from "../component/Logo/Logo";
 import NavBar from "../component/NavBar/NavBar";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+//React-Bootstrap
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+//scss
+import styles from "../pages/ComponentStyle.module.scss";
+//Icons
 import {
   HomeIcon,
   LogoIcon,
   LogoOutIcon,
   SettingIcon,
 } from "../component/Icons/Icons";
+//react
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ComponentStyle = () => {
   /*Example handle AuthInput */
@@ -23,6 +31,15 @@ const ComponentStyle = () => {
   };
   const handlePssword = (currentValue) => {
     setPassword(currentValue);
+  };
+
+  //modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
   };
 
   return (
@@ -66,6 +83,32 @@ const ComponentStyle = () => {
       </div>
       <div className="border mb-4 p-4">
         <NavBar />
+      </div>
+      <div className="border mb-4 p-4">
+        <Button className="text-white" variant="primary" onClick={handleShow}>
+          Launch static backdrop modal
+        </Button>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+          centered
+        >
+          {/* bsPrefix 他會重新設置react-bootstrap css 樣式 */}
+          <Modal.Header closeButton bsPrefix={`${styles["modal-header"]}`}>
+            {/* <Modal.Title>Modal title</Modal.Title> */}
+          </Modal.Header>
+          <Modal.Body className="d-flex flex-column align-items-center">
+            <div>
+              <img src="https://fakeimg.pl/300/" alt="" />
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, ab
+            atque, mollitia odit voluptatibus expedita dignissimos minus illo
+            recusandae, deserunt placeat et quos perferendis non hic asperiores
+            a commodi nulla.
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );
